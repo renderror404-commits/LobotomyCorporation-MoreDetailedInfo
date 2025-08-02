@@ -63,6 +63,7 @@ namespace DetailedInfo
             int currentStatValue;
             float earnedStatValue;
             int titleBonus;
+            
             switch (__instance.type)
             {
                 case RwbpType.R:
