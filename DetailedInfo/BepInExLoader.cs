@@ -110,7 +110,7 @@ namespace DetailedInfo
             var earnedStatText = Math.Round((decimal)earnedStatValue, 0);
             var earnedValueColor = AgentInfoWindow.currentWindow.Additional_Plus_ValueColor;
 
-            __instance.StatName.text = $"{statName} {statGradeText} ({currentStatValue}<color=#{earnedValueColor}>+{earnedStatText}</color>)";
+            __instance.StatName.text = $"{statName} {statGradeText} ({currentStatValue}<color=#{earnedValueColor}>+{earnedStatValue:0.000}</color>)";
         }
     }
     
