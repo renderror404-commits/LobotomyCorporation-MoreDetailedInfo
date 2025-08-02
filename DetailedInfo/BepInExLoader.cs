@@ -62,7 +62,7 @@ namespace DetailedInfo
             int statGrade;
             int currentStatValue;
             float earnedStatValue;
-
+            int titleBonus;
             switch (__instance.type)
             {
                 case RwbpType.R:
@@ -71,7 +71,8 @@ namespace DetailedInfo
                         statGrade = agent.Rstat;
                         currentStatValue = agent.primaryStat.maxHP;
                         earnedStatValue = agent.primaryStatExp.hp;
-
+                        titleBonus = agent.titleBonus.maxHP;
+                        
                         break;
                     }
                 case RwbpType.W:
@@ -80,7 +81,8 @@ namespace DetailedInfo
                         statGrade = agent.Wstat;
                         currentStatValue = agent.primaryStat.maxMental;
                         earnedStatValue = agent.primaryStatExp.mental;
-
+                        titleBonus = agent.titleBonus.maxMental;
+                        
                         break;
                     }
                 case RwbpType.B:
@@ -89,7 +91,8 @@ namespace DetailedInfo
                         statGrade = agent.Bstat;
                         currentStatValue = agent.primaryStat.workProb;
                         earnedStatValue = agent.primaryStatExp.work;
-
+                        titleBonus = agent.titleBonus.workProb;
+                        
                         break;
                     }
                 case RwbpType.P:
@@ -98,7 +101,8 @@ namespace DetailedInfo
                         statGrade = agent.Pstat;
                         currentStatValue = agent.primaryStat.attackSpeed;
                         earnedStatValue = agent.primaryStatExp.battle;
-
+                        titleBonus = agent.titleBonus.attackSpeed;
+                        
                         break;
                     }
                 default:
@@ -110,7 +114,8 @@ namespace DetailedInfo
             var earnedStatText = Math.Round((decimal)earnedStatValue, 0);
             var earnedValueColor = AgentInfoWindow.currentWindow.Additional_Plus_ValueColor;
 
-            __instance.StatName.text = $"{statName} {statGradeText} ({currentStatValue}<color=#{earnedValueColor}>+{earnedStatValue:0.000}</color>)";
+            __instance.StatName.text = $"{statName} {statGradeText} ({currentStatValue}+
+            {titleBonus}<color=#{earnedValueColor}>+{earnedStatValue:0.000}</color>)";
         }
     }
     
